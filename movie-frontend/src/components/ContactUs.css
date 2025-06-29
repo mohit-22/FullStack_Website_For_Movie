@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.cinema-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(255, 255, 255, 0.02) 49%,
+      rgba(255, 255, 255, 0.02) 51%,
+      transparent 52%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Header Styles */
+.contact-header {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(220, 20, 60, 0.3);
+  padding: 1rem 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: 2px solid #dc143c;
+  object-fit: cover;
+}
+
+.brand-text {
+  font-family: "Times New Roman", "Georgia", "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #dc143c;
+  letter-spacing: 2px;
+}
+
+.signin-btn {
+  background: linear-gradient(45deg, #dc143c, #b91c3c);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+.signin-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.signin-btn:hover::before {
+  left: 100%;
+}
+
+.signin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+}
+
+/* Main Content */
+.contact-main {
+  position: relative;
+  z-index: 5;
+  padding: 4rem 0;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-title {
+  font-family: "Times New Roman", "Georgia", "Playfair Display", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.title-accent {
+  color: #dc143c;
+  text-shadow: 0 0 20px rgba(220, 20, 60, 0.5);
+}
+
+.title-main {
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  margin-left: 1rem;
+}
+
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #dc143c, #ffd700);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.contact-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #cccccc;
+  font-weight: 300;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Search Section */
+.search-section {
+  margin-bottom: 4rem;
+}
+
+.search-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.issue-input {
+  width: 100%;
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  color: white;
+  font-size: 1.1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.issue-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.issue-input:focus {
+  outline: none;
+  border-color: #dc143c;
+  box-shadow: 0 0 20px rgba(220, 20, 60, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.search-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #dc143c;
+}
+
+/* Quick Links Section */
+.quick-links-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: "Times New Roman", "Georgia", "Playfair Display", serif;
+  font-size: 2rem;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.links-grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.quick-link:hover {
+  background: rgba(220, 20, 60, 0.1);
+  border-color: rgba(220, 20, 60, 0.3);
+  transform: translateX(10px);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.link-icon {
+  color: #dc143c;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.quick-link:hover .link-icon {
+  transform: translateX(5px);
+}
+
+.link-text {
+  flex: 1;
+}
+
+/* Footer */
+.contact-footer {
+  position: relative;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.language-label {
+  color: #cccccc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.language-select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.language-select option {
+  background: #1a1a1a;
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: #cccccc;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #dc143c;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+  }
+
+  .brand-text {
+    font-size: 1.2rem;
+  }
+
+  .contact-container {
+    padding: 0 1rem;
+  }
+
+  .title-section {
+    margin-bottom: 3rem;
+  }
+
+  .contact-title {
+    font-size: 3rem;
+  }
+
+  .title-main {
+    margin-left: 0;
+    display: block;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-btn {
+    padding: 0.6rem 1.5rem;
+  }
+
+  .issue-input {
+    padding: 1.2rem 2.5rem 1.2rem 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
